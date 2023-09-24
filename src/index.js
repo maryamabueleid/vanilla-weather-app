@@ -12,6 +12,25 @@ function displayTemperature(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+  let time = document.querySelector("#date");
+  time.innerHTML = formatDate(response.data.time);
+}
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
+  let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+
+  let days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
 let apiKey = "0bb6doe3a544328d20t3a076f6957409";
