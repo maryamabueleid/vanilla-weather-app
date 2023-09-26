@@ -36,7 +36,15 @@ function formatDate(timestamp) {
   let Day = days[date.getDay()];
   return `${Day} ${hours}:${minutes}`;
 }
-let city = "cairo";
-let apiKey = "0bb6doe3a544328d20t3a076f6957409";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "0bb6doe3a544328d20t3a076f6957409";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(Event) {
+  Event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
