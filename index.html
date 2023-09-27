@@ -3,71 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vanilla</title>
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form action="" id="search-form" class="mb-3">
+          <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
-            <input type="search" placeholder="type a city" class="form-control" id="city-input" autocomplete="off">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
             </div>
-            <div class="col-3">
-            <input type="submit" value="search" class="btn btn-primary w-100">
-          </div>
-          </div>
           </form>
-            <div class="overview">
-          <h1 id="city">new york</h1>
-          <h2>
+          <div class="overview">
+            <h1 id="city"></h1>
             <ul>
-              <li>last <span id="cap">updated :</span><span id="date"></span></li>
-              <li id="description">clear</li>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
             </ul>
-            </div>
-          </h2>
+          </div>
           <div class="row">
             <div class="col-6">
-              <div class="flexbox weather-temp">
-                <img
-                src=""
-                alt="clear"
-                id="icon"
-              />
-                <strong id="temp">12</strong><span class="units">°C| <a href="#">°F</a></span>
-           
-            </div>
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </div>
             </div>
             <div class="col-6">
               <ul>
-               
-                <li>humidity: <span id="humidity"></span>%</li>
-                <li>wind: <span id="wind"></span> km/h </li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
         </div>
         <small>
           <a
-            href="https://github.com/maryamabueleid/vanilla-weather-app"
+            href="https://github.com/wecodeschool/vanilla-weather-app"
             target="_blank"
-            >source code</a
+            >Open-source code</a
           >
-          by maryam
+          by Maryam
         </small>
       </div>
     </div>
-   
     <script src="src/index.js"></script>
   </body>
 </html>
